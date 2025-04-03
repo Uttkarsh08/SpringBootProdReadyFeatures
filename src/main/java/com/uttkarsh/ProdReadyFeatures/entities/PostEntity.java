@@ -13,7 +13,7 @@ import org.hibernate.envers.Audited;
 @NoArgsConstructor
 @Getter
 @Setter
-@Audited
+@Audited  //used to make it auditable
 public class PostEntity extends AuditableEntity{
 
     @Id
