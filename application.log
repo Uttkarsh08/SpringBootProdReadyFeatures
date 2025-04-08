@@ -1,0 +1,125 @@
+2025-04-08T16:17:36.987+05:30  INFO 2564 --- [ProdReadyFeatures] [main] c.u.P.ProdReadyFeaturesApplicationTests  : Starting ProdReadyFeaturesApplicationTests using Java 23.0.2 with PID 2564 (started by uttka in C:\Users\uttka\Desktop\SpringBoot\ProdReadyFeatures)
+2025-04-08T16:17:36.992+05:30  INFO 2564 --- [ProdReadyFeatures] [main] c.u.P.ProdReadyFeaturesApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-04-08T16:17:39.246+05:30  INFO 2564 --- [ProdReadyFeatures] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-08T16:17:39.399+05:30  INFO 2564 --- [ProdReadyFeatures] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interface.
+2025-04-08T16:17:41.082+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-08T16:17:41.240+05:30  INFO 2564 --- [ProdReadyFeatures] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-08T16:17:41.342+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-08T16:17:41.620+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2025-04-08T16:17:42.104+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-08T16:17:42.184+05:30  INFO 2564 --- [ProdReadyFeatures] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-08T16:17:42.595+05:30  INFO 2564 --- [ProdReadyFeatures] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a57cf90
+2025-04-08T16:17:42.599+05:30  INFO 2564 --- [ProdReadyFeatures] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-08T16:17:42.771+05:30  INFO 2564 --- [ProdReadyFeatures] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-08T16:17:43.279+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.h.e.c.i.m.AuditMetadataGenerator       : Adding properties for entity: com.uttkarsh.ProdReadyFeatures.entities.PostEntity
+2025-04-08T16:17:44.802+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-08T16:17:44.930+05:30  INFO 2564 --- [ProdReadyFeatures] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08T16:17:46.743+05:30  WARN 2564 --- [ProdReadyFeatures] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-08T16:17:46.912+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-08T16:17:48.699+05:30  INFO 2564 --- [ProdReadyFeatures] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-04-08T16:17:48.863+05:30  INFO 2564 --- [ProdReadyFeatures] [main] c.u.P.ProdReadyFeaturesApplicationTests  : Started ProdReadyFeaturesApplicationTests in 12.747 seconds (process running for 15.195)
+2025-04-08T16:17:49.938+05:30 TRACE 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Trying to create Employee with information EmployeeDTO(id=null, name=Vamsi, email=vamsi@gmail.com, age=20, role=ADMIN, salary=7000, joiningDate=2025-04-01, isActive=true)
+2025-04-08T16:17:50.180+05:30 DEBUG 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : 4xxClient error occurred during createNewEmployee
+2025-04-08T16:17:50.182+05:30 ERROR 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : {"data":null,"error":{"status":"NOT_FOUND","message":"Input Validation Failed","subErrors":["isActive has to be true"]},"timestamp":"2025-04-08T16:17:50.1547794"}
+2025-04-08T16:17:50.184+05:30 ERROR 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Exception occurred in createNewEmployee
+
+com.uttkarsh.ProdReadyFeatures.exceptions.ResourceNotFoundException: could not create the employee
+	at com.uttkarsh.ProdReadyFeatures.clients.impl.EmployeeClientImplementation.lambda$createEmployee$2(EmployeeClientImplementation.java:81) ~[classes/:na]
+	at org.springframework.web.client.StatusHandler.handle(StatusHandler.java:146) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.applyStatusHandlers(DefaultRestClient.java:826) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$readBody$4(DefaultRestClient.java:815) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:215) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:814) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$toEntityInternal$2(DefaultRestClient.java:770) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:574) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:765) ~[spring-web-6.2.5.jar:6.2.5]
+	at com.uttkarsh.ProdReadyFeatures.clients.impl.EmployeeClientImplementation.createEmployee(EmployeeClientImplementation.java:83) ~[classes/:na]
+	at com.uttkarsh.ProdReadyFeatures.ProdReadyFeaturesApplicationTests.createEmployee(ProdReadyFeaturesApplicationTests.java:42) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767) ~[junit-platform-commons-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68) ~[junit-jupiter-engine-5.11.4.jar:5.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.11.4.jar:1.11.4]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) ~[junit-rt.jar:na]
+
+2025-04-08T16:17:50.254+05:30 TRACE 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Trying to get Employee By Id in getEmployeeById with id: 652
+2025-04-08T16:17:50.351+05:30 TRACE 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Trying to retrieve all employees in getAllEmployees
+2025-04-08T16:17:50.351+05:30  INFO 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Attempting to call the restClient Method in getAllEmployees
+2025-04-08T16:17:50.376+05:30 DEBUG 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Successfully retrieved the employees in getAllEmployees
+2025-04-08T16:17:50.376+05:30 TRACE 2564 --- [ProdReadyFeatures] [main] c.u.P.c.i.EmployeeClientImplementation   : Retrieved employees list in getAllEmployees : [EmployeeDTO(id=2, name=Anant, email=annat@gmail.com, age=23, role=null, salary=null, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=52, name=aman, email=aman@gmail.com, age=23, role=null, salary=null, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=253, name=neil, email=neil@gmail.com, age=21, role=null, salary=null, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=302, name=neil, email=neil@gmail.com, age=21, role=null, salary=null, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=352, name=n, email=neil@gmail.com, age=21, role=null, salary=null, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=402, name=neil, email=neil@gmail.com, age=21, role=USER, salary=null, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=452, name=n, email=neil@gmail.com, age=21, role=ADMIN, salary=100, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=502, name=n, email=neil@gmail.com, age=21, role=ADMIN, salary=10000, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=552, name=neil, email=neil@gmail.com, age=21, role=USER, salary=5000, joiningDate=2025-03-11, isActive=false), EmployeeDTO(id=602, name=mayank, email=mynk@gmail.com, age=22, role=USER, salary=10000, joiningDate=2025-03-19, isActive=false), EmployeeDTO(id=652, name=Vamsi, email=vamsi@gmail.com, age=20, role=USER, salary=5000, joiningDate=2025-04-01, isActive=false), EmployeeDTO(id=653, name=Vamsi, email=vamsi@gmail.com, age=20, role=ADMIN, salary=7000, joiningDate=2025-04-01, isActive=false), EmployeeDTO(id=702, name=Vamsi, email=vamsi@gmail.com, age=20, role=ADMIN, salary=7000, joiningDate=2025-04-01, isActive=false), EmployeeDTO(id=703, name=Vamsi, email=vamsi@gmail.com, age=20, role=ADMIN, salary=7000, joiningDate=2025-04-01, isActive=false)]
+2025-04-08T16:17:50.402+05:30  INFO 2564 --- [ProdReadyFeatures] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08T16:17:50.406+05:30  INFO 2564 --- [ProdReadyFeatures] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-08T16:17:50.422+05:30  INFO 2564 --- [ProdReadyFeatures] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
